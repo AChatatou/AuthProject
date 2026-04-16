@@ -17,6 +17,7 @@ public class UserController {
 
     private UserService userService;
 
+
     @PostMapping("/register")
     public ResponseEntity<UserDto> registerUser(@Valid @RequestBody UserRegisterRequest registerRequest, UriComponentsBuilder uriBuilder) {
 
