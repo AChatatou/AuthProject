@@ -49,7 +49,7 @@ public class UserService {
         return mapper.toDto(newUser);
     }
 
-    public UserDto updateUser(UserUpdateRequest updateRequest) throws EmailAlreadyExistsException {
+    public UserDto updateUser(UserUpdateRequest updateRequest) throws UserNotFoundException, EmailAlreadyExistsException {
 
         var user = userRepository.findByEmail(updateRequest.oldEmail())
                 .orElseThrow(() -> new UserNotFoundException(updateRequest.oldEmail()));
